@@ -58,7 +58,6 @@ df_template['obesity'] = (df_template['bmi'] > 30).astype(int)
 #Create an interaction term for smoker and obesity
 df_template['smoker_obesity_interaction'] = df_template['smoker_yes'] * df_template['obesity']
 
-st.write(df_template)
 if st.button('Predict'):
     prediction = model.predict(df_template)
     st.write(f'The Predicted Medical Charges is: {prediction}')
